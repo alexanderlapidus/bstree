@@ -2,10 +2,12 @@
 bstree with easy to find any nodes within a given interval
 
 class Node():
+
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
+
     def append(self, value):
         if value <self.value:
             if self.left is None:
@@ -41,24 +43,30 @@ class Node():
             if order_list_limit_lower[i] >= upper:
                 order_list_limit = order_list_limit_lower[:i-1]
         return order_list_limit
+
 class BinarySearchTree():
+
     def __init__(self):
         self.root = None
+
     def append(self, value):
         if self.root is None:
             self.root = Node(value)
         else:
             self.root.append(value)
+
     def ordered_list(self):
         if self.root is None:
             return []
         else:
             return self.root.ordered_list()
+
     def ordered_list_limits(self, lower, upper):
         if self.root is None:
             return []
         else:
             return self.root.ordered_list_limits(lower, upper)
+
 if __name__ == "__main__":
     tree = BinarySearchTree()
     tree.append(50)
