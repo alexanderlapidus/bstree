@@ -66,6 +66,7 @@ class BinarySearchTree():
             return []
         else:
             return self.root.ordered_list_limits(lower, upper)
+
 if __name__ == "__main__":
     tree = BinarySearchTree()
     tree.append(50)
